@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews | Prime City Drivers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reviews Page Specific Styles */
+        .reviews-page {
+            padding-top: 100px;
+            padding-bottom: 50px;
+            background-color: #1a1a1a;
+            min-height: 100vh;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h1 { color: #d4af37; font-size: 36px; }
+        .section-title p { color: #ccc; }
+
+        /* Review Grid */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Review Card Style */
+        .review-box {
+            background: #252525;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .review-box:hover { transform: translateY(-5px); }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+            border: 1px solid #d4af37;
+        }
+        .user-info h4 { margin: 0; color: #fff; font-size: 16px; }
+        .star-rating { color: #d4af37; font-size: 14px; margin-bottom: 10px; }
+        .review-text { color: #ccc; font-style: italic; line-height: 1.5; font-size: 14px; }
+
+        /* Form Section */
+        .add-review-section {
+            max-width: 600px;
+            margin: 80px auto 0 auto;
+            background: #0f0f0f;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .add-review-section h3 { color: #d4af37; margin-bottom: 20px; }
+        
+        .rating-input {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .rating-input i {
+            font-size: 28px;
+            color: #444;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .rating-input i.active, .rating-input i:hover { color: #d4af37; }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        textarea.form-input { resize: vertical; height: 100px; }
+        
+        .btn-submit-review {
+            width: 100%;
+            padding: 12px;
+            background: #d4af37;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-submit-review:hover { background: #fff; }
+        .btn-submit-review:disabled { background: #555; cursor: not-allowed; }
+
+        /* Loading Spinner */
+        .loader {
+            border: 4px solid #333;
+            border-top: 4px solid #d4af37;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PRIME CITY<span>DRIVERS</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#booking" class="btn-nav">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <div class="reviews-page">
+        <div class="section-title">
+            <h1>Client Stories</h1>
+            <p>Real experiences from our valued customers.</p>
+        </div>
+
+        <div class="loader" id="loader"></div>
+        <div class="reviews-container" id="reviewList">
+            </div>
+
+        <div class="add-review-section">
+            <h3>Share Your Experience</h3>
+            <form id="reviewForm">
+                <div class="rating-input" id="starContainer">
+                    <i class="fas fa-star" data-value="1"></i>
+                    <i class="fas fa-star" data-value="2"></i>
+                    <i class="fas fa-star" data-value="3"></i>
+                    <i class="fas fa-star" data-value="4"></i>
+                    <i class="fas fa-star" data-value="5"></i>
+                </div>
+                <input type="hidden" name="Rating" id="ratingValue" value="0">
+                
+                <input type="text" name="Name" id="reviewerName" class="form-input" placeholder="Your Name" required>
+                <textarea name="Comment" id="reviewComment" class="form-input" placeholder="Write your feedback..." required></textarea>
+                
+                <button type="submit" class="btn-submit-review" id="submitBtn">Post Review</button>
+                <p id="statusMsg" style="margin-top:10px; font-size:14px; color:#aaa;"></p>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Prime City Drivers. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- 1. CONFIGURATION ---
+        // Pahalata oya copy karagaththa URL eka methanata daanna:
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwN9NF5ugfB7uGVBts5zSEfYSdi2rQJGOqt3gHorAD092guqX5h4yh6ncK8s6De0JHs/exec'; 
+
+        const reviewList = document.getElementById('reviewList');
+        const loader = document.getElementById('loader');
+
+        // --- 2. LOAD REVIEWS (Database eken ganna) ---
+        function loadReviews() {
+            loader.style.display = 'block';
+            fetch(scriptURL)
+                .then(response => response.json())
+                .then(data => {
+                    loader.style.display = 'none';
+                    reviewList.innerHTML = ''; // Clear existing
+                    
+                    // Add reviews from database
+                    data.reverse().forEach(review => { // Reverse to show new ones first
+                        addReviewToHTML(review.name, review.rating, review.comment);
+                    });
+                    
+                    // If no reviews, show message
+                    if(data.length === 0) {
+                        reviewList.innerHTML = '<p style="text-align:center; width:100%; color:#555;">No reviews yet. Be the first!</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    loader.style.display = 'none';
+                });
+        }
+
+        // Page load wuna gaman reviews ganna
+        window.onload = loadReviews;
+
+        // --- 3. SUBMIT REVIEW (Database ekata yawanna) ---
+        const form = document.getElementById('reviewForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMsg = document.getElementById('statusMsg');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            if(document.getElementById('ratingValue').value == "0") {
+                alert("Please select a star rating!");
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Posting...";
+            
+            // Send data to Google Sheet
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    statusMsg.innerText = "Review submitted successfully!";
+                    statusMsg.style.color = "#28a745";
+                    
+                    // Show new review instantly without reload
+                    addReviewToHTML(
+                        document.getElementById('reviewerName').value,
+                        document.getElementById('ratingValue').value,
+                        document.getElementById('reviewComment').value
+                    );
+                    
+                    // Reset Form
+                    form.reset();
+                    resetStars();
+                    submitBtn.innerText = "Post Review";
+                    submitBtn.disabled = false;
+                    
+                    // Hide success message after 3 seconds
+                    setTimeout(() => { statusMsg.innerText = ""; }, 3000);
+                })
+                .catch(error => {
+                    statusMsg.innerText = "Error! Please try again.";
+                    statusMsg.style.color = "red";
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // --- HELPER FUNCTIONS ---
+        
+        // HTML ekata Review ekak ekathu karana function eka
+        function addReviewToHTML(name, rating, comment) {
+            let starsHtml = "";
+            for(let i=0; i<rating; i++) starsHtml += '<i class="fas fa-star"></i>';
+            
+            const newReview = `
+                <div class="review-box">
+                    <div class="user-profile">
+                        <div class="user-avatar"><i class="fas fa-user"></i></div>
+                        <div class="user-info">
+                            <h4>${name}</h4>
+                        </div>
+                    </div>
+                    <div class="star-rating">${starsHtml}</div>
+                    <p class="review-text">"${comment}"</p>
+                </div>
+            `;
+            reviewList.insertAdjacentHTML('afterbegin', newReview);
+        }
+
+        // Star Rating Logic
+        const stars = document.querySelectorAll('#starContainer i');
+        const ratingInput = document.getElementById('ratingValue');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                ratingInput.value = value;
+                highlightStars(value);
+            });
+        });
+
+        function highlightStars(value) {
+            stars.forEach(s => s.classList.remove('active'));
+            for(let i=0; i<value; i++) {
+                stars[i].classList.add('active');
+            }
+        }
+
+        function resetStars() {
+            stars.forEach(s => s.classList.remove('active'));
+            ratingInput.value = "0";
+        }
+    </script>
+
+</body>
+</html>

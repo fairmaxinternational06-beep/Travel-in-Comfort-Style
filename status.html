@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Booking Status | Prime City Drivers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PRIME CITY<span>DRIVERS</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#booking" class="btn-nav">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <div class="status-container">
+        <div class="status-box">
+            <p style="margin-top: 10px; font-size: 18px; color: #d4af37;">Please answer the questions below.</p>
+
+            <div class="question-group" id="q1-group">
+                <h3>1. Have you placed a booking request?</h3>
+                <div class="options">
+                    <button class="btn-option" id="q1-yes" onclick="selectOption('q1', 'yes')">Yes, I did</button>
+                    <button class="btn-option" id="q1-no" onclick="selectOption('q1', 'no')">No, Not yet</button>
+                </div>
+            </div>
+
+            <div class="question-group hidden" id="q2-group">
+                <h3>2. Has a driver been assigned to you?</h3>
+                <div class="options">
+                    <button class="btn-option" id="q2-yes" onclick="selectOption('q2', 'yes')">Yes, Got details</button>
+                    <button class="btn-option" id="q2-no" onclick="selectOption('q2', 'no')">No, Still waiting</button>
+                </div>
+            </div>
+
+            <button class="btn-submit" id="submitBtn" onclick="submitStatus()">Submit</button>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Prime City Drivers. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let answer1 = null;
+        let answer2 = null;
+        
+        // ඔබේ WhatsApp අංකය මෙතනට දමන්න (94 සමග)
+        const myPhoneNumber = "94760419130"; 
+
+        function selectOption(question, value) {
+            if (question === 'q1') {
+                answer1 = value;
+                document.getElementById('q1-yes').classList.remove('selected');
+                document.getElementById('q1-no').classList.remove('selected');
+                document.getElementById('q1-' + value).classList.add('selected');
+
+                if (value === 'yes') {
+                    document.getElementById('q2-group').classList.remove('hidden');
+                } else {
+                    document.getElementById('q2-group').classList.add('hidden');
+                    answer2 = null; // Reset Q2 if user changed mind
+                }
+            } 
+            else if (question === 'q2') {
+                answer2 = value;
+                document.getElementById('q2-yes').classList.remove('selected');
+                document.getElementById('q2-no').classList.remove('selected');
+                document.getElementById('q2-' + value).classList.add('selected');
+            }
+        }
+
+        function submitStatus() {
+            // Validation
+            if (answer1 === null) {
+                alert("Please answer the questions first!\n(කරුණාකර ප්‍රශ්න වලට පිළිතුරු දෙන්න)");
+                return;
+            }
+
+            if (answer1 === 'yes' && answer2 === null) {
+                alert("Please answer the second question.\n(කරුණාකර දෙවන ප්‍රශ්නයට පිළිතුරු දෙන්න)");
+                return;
+            }
+
+            // WhatsApp පණිවිඩය සකස් කිරීම
+            let msg = "CUSTOMER STATUS REPORT:%0A%0A";
+            msg += "1. Placed Booking: *" + answer1.toUpperCase() + "*%0A";
+            
+            if (answer1 === 'yes') {
+                msg += "2. Driver Assigned: *" + (answer2 ? answer2.toUpperCase() : "N/A") + "*%0A";
+            } else {
+                msg += "2. Driver Assigned: N/A (Not booked yet)%0A";
+            }
+            
+            msg += "%0APlease check and assist me.";
+
+            // WhatsApp වෙත යැවීම
+            let whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + msg;
+            window.open(whatsappURL, '_blank');
+
+            // තත්පර 1 කින් පිටුව Refresh කිරීම (Auto Refresh)
+            setTimeout(function() {
+                location.reload();
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>

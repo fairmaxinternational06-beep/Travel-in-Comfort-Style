@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Chauffeur Services | Prime City Drivers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* VIP Page Specific Styles */
+        .vip-container {
+            background-color: #000;
+            color: #fff;
+            padding-top: 80px;
+        }
+
+        /* VIP Hero Section */
+        .vip-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1470&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .vip-hero h1 {
+            font-size: 50px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .vip-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ddd;
+            font-style: italic;
+        }
+
+        /* What Defines VIP Section */
+        .vip-details {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .vip-section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .vip-section-title h2 { font-size: 36px; color: #d4af37; }
+        .vip-section-title p { color: #888; margin-top: 10px; }
+
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .vip-card {
+            background: #111;
+            border: 1px solid #333;
+            padding: 30px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+        }
+        .vip-card:hover {
+            border-color: #d4af37;
+            background: #1a1a1a;
+        }
+        .vip-card i {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        .vip-card h3 { font-size: 22px; margin-bottom: 15px; color: #fff; }
+        .vip-card p { color: #aaa; font-size: 14px; line-height: 1.6; }
+
+        /* Ideal For Section */
+        .ideal-for {
+            background: #1a1a1a;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .ideal-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .tag {
+            background: #d4af37;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* Gold CTA Button */
+        .btn-vip-book {
+            display: inline-block;
+            background: linear-gradient(45deg, #d4af37, #f2d06b, #d4af37);
+            color: #000;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            margin-top: 40px;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+        .btn-vip-book:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PRIME CITY<span>DRIVERS</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#booking" class="btn-nav">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="vip-hero">
+        <div class="hero-content">
+            <h1>The Elite Experience</h1>
+            <p>"More than just a driver. A statement of class and professionalism for your luxury vehicle."</p>
+            <a href="index.html#booking" class="btn-vip-book">Request VIP Driver</a>
+        </div>
+    </header>
+
+    <div class="vip-container">
+        
+        <section class="vip-details">
+            <div class="vip-section-title">
+                <h2>What is the VIP Treatment?</h2>
+                <p>Designed for corporate executives, celebrities, and luxury car owners who demand perfection.</p>
+            </div>
+
+            <div class="vip-grid">
+                
+                <div class="vip-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Impeccable Grooming</h3>
+                    <p>Our VIP chauffeurs arrive in professional attire (Full Suit or Smart Casual upon request). Well-groomed, polite, and English-speaking professionals.</p>
+                </div>
+
+                <div class="vip-card">
+                    <i class="fas fa-car-alt"></i>
+                    <h3>Luxury Car Expertise</h3>
+                    <p>Specialized knowledge in handling high-end vehicles (Benz S-Class, BMW 7 Series, Range Rover). We know your car's features and safety systems.</p>
+                </div>
+
+                <div class="vip-card">
+                    <i class="fas fa-hand-holding"></i>
+                    <h3>White Glove Service</h3>
+                    <p>We open doors for you and your guests, handle luggage with care, and offer umbrella service during rain. You are the priority.</p>
+                </div>
+
+                <div class="vip-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Strict Confidentiality</h3>
+                    <p>Your privacy is paramount. What happens in the car, stays in the car. Our drivers are trained to maintain silence and discretion.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="ideal-for">
+            <h2>Perfect For</h2>
+            <div class="ideal-tags">
+                <span class="tag">Weddings</span>
+                <span class="tag">Corporate Events</span>
+                <span class="tag">Diplomats</span>
+                <span class="tag">Red Carpet Arrivals</span>
+                <span class="tag">Luxury Airport Transfers</span>
+            </div>
+            <br>
+            <p style="color: #888; margin-top: 20px;">*VIP rates are slightly higher due to the premium level of service.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Prime City Drivers. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

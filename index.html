@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime City Drivers | Luxury Transport Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PRIME CITY<span>DRIVERS</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#reviews-section">Reviews</a></li> <li><a href="#booking" class="btn-nav">Book Now</a></li>
+        </ul>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Travel in Comfort & Style</h1>
+            <p>Your Trusted Travel Partner in Colombo. Safe, Reliable, and Premium Service.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-gold">Book a Ride</a>
+                <a href="https://wa.me/94700000000" class="btn-transparent"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="features">
+        <div class="container">
+            <h2>Why Choose Prime City?</h2>
+            <div class="feature-grid">
+                <a href="status.html" class="feature-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Verified Drivers</h3>
+                    <p>Experienced and background-checked professionals for your safety.</p>
+                </a>
+
+                <a href="services.html" class="feature-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Our Services</h3>
+                    <p>We provide professional drivers to drive YOUR vehicle. Safe, reliable, and convenient.</p>
+                </a>
+
+                <a href="vip.html" class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>VIP Treatment</h3>
+                    <p>Clean vehicles and polite service that exceeds expectations.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>Book Your Ride</h2>
+            <p>Fill the form below to get an instant quote via WhatsApp.</p>
+            
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Pickup Location</label>
+                    <input type="text" id="pickup" placeholder="Colombo 03, Airport, etc." required>
+                </div>
+                <div class="form-group">
+                    <label>Drop-off Location</label>
+                    <input type="text" id="drop" placeholder="Destination" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Vehicle Type</label>
+                    <select id="vehicle">
+                        <option value="Sedan Car (4 Pax)">Sedan Car (4 Pax)</option>
+                        <option value="Mini Van (6 Pax)">Mini Van (6 Pax)</option>
+                        <option value="KDH Van (9 Pax)">KDH Van (9 Pax)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-gold full-width">Send Booking Request <i class="fab fa-whatsapp"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <section id="reviews-section" class="reviews">
+        <div class="container">
+            <h2>Client Reviews</h2>
+            <p>See what others are saying about Prime City Drivers.</p>
+            
+            <div class="loader" id="loader"></div>
+            <div class="reviews-container" id="reviewList">
+                </div>
+
+                <div class="add-review-section">
+                    <h3>Rate Your Experience</h3>
+                    <form id="reviewForm">
+                        <div class="rating-input" id="starContainer">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="Rating" id="ratingValue" value="0">
+                        
+                        <input type="text" name="Name" id="reviewerName" class="form-input" placeholder="Your Name" style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px;" required>
+                        
+                        <textarea name="Comment" id="reviewComment" class="form-input" placeholder="Write your feedback..." style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px; height:80px;" required></textarea>
+                        
+                        <button type="submit" class="btn-gold" id="submitReviewBtn" style="width:100%;">Post Review</button>
+                        <p id="statusMsg" style="margin-top:10px; font-size:14px; color:#aaa;"></p>
+                    </form>
+                </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Prime City Drivers. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

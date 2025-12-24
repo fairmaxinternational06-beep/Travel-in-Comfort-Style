@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Premium Services | Prime City Drivers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Advanced Service Page Styles */
+        .service-page-container {
+            padding-top: 100px;
+            background-color: #1a1a1a;
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        /* Intro Section */
+        .service-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+        .service-intro h1 { font-size: 42px; margin-bottom: 20px; color: #d4af37; }
+        .service-intro p { color: #ccc; font-size: 18px; line-height: 1.6; }
+
+        /* Service Grid */
+        .service-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 0 20px 80px 20px;
+        }
+        
+        /* Service Card Advanced Design */
+        .service-box {
+            background: #252525;
+            border-top: 3px solid #d4af37; /* Gold Top Border */
+            border-radius: 8px;
+            width: 350px; /* Wider cards */
+            padding: 30px;
+            text-align: left;
+            transition: 0.3s;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+            background: #2a2a2a;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        }
+        .service-icon {
+            font-size: 35px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        .service-box h3 { color: #fff; font-size: 24px; margin-bottom: 15px; }
+        .service-box ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        .service-box ul li {
+            color: #bbb;
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .service-box ul li::before {
+            content: "✓";
+            color: #d4af37;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .btn-book-service {
+            display: block;
+            text-align: center;
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-book-service:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: #0f0f0f;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .steps-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        .step {
+            max-width: 250px;
+        }
+        .step-num {
+            background: #d4af37;
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 auto 15px auto;
+        }
+        .step h4 { color: #fff; margin-bottom: 10px; }
+        .step p { color: #888; font-size: 14px; }
+
+        /* Vehicle Types Strip */
+        .vehicle-types {
+            background: #d4af37;
+            color: #000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .vehicle-types h2 { color: #000; margin-bottom: 10px; }
+        .vehicle-list span {
+            display: inline-block;
+            margin: 10px 20px;
+            font-weight: bold;
+            font-size: 18px;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PRIME CITY<span>DRIVERS</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#booking" class="btn-nav">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <div class="service-page-container">
+        
+        <div class="service-intro">
+            <h1>Expert Drivers for YOUR Vehicle</h1>
+            <p>Experience the freedom of traveling in your own car without the stress of driving. 
+            Whether it's a busy workday, a long outstation trip, or a night out, our verified professionals take the wheel.</p>
+        </div>
+
+        <div class="service-grid">
+            
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-city"></i></div>
+                <h3>City & Hourly Hire</h3>
+                <ul>
+                    <li>Perfect for meetings & shopping runs</li>
+                    <li>We handle Colombo traffic & parking</li>
+                    <li>Minimum 2 hours booking</li>
+                    <li>Professional attire & conduct</li>
+                </ul>
+                <a href="index.html#booking" class="btn-book-service">Book Hourly Driver</a>
+            </div>
+
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-route"></i></div>
+                <h3>Outstation Trips</h3>
+                <ul>
+                    <li>Long-distance highway experienced</li>
+                    <li>24-hour availability packages</li>
+                    <li>Safe driving for family vacations</li>
+                    <li>Driver accommodation options</li>
+                </ul>
+                <a href="index.html#booking" class="btn-book-service">Plan Long Trip</a>
+            </div>
+
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-cocktail"></i></div>
+                <h3>Night & Party Drops</h3>
+                <ul>
+                    <li>Designated drivers for parties</li>
+                    <li>Late-night pickup availability</li>
+                    <li>Ensure you & your car get home safe</li>
+                    <li>100% Confidential service</li>
+                </ul>
+                <a href="index.html#booking" class="btn-book-service">Book Night Driver</a>
+            </div>
+
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+                <h3>Airport Drop & Return</h3>
+                <ul>
+                    <li>Driver drives you to airport in your car</li>
+                    <li>Driver brings your vehicle back home</li>
+                    <li>No expensive airport taxi fees</li>
+                    <li>Your car stays safe at your home</li>
+                </ul>
+                <a href="index.html#booking" class="btn-book-service">Book Airport Run</a>
+            </div>
+
+            <div class="service-box">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Maintenance Runs</h3>
+                <ul>
+                    <li>Too busy to service your car?</li>
+                    <li>We take your car to the service center</li>
+                    <li>We wait and bring it back to you</li>
+                    <li>Updates via WhatsApp throughout</li>
+                </ul>
+                <a href="index.html#booking" class="btn-book-service">Book Service Run</a>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="how-it-works">
+        <h2 style="color: #d4af37;">How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Book a Driver</h4>
+                <p>Fill our online form or WhatsApp us. Tell us your location, time, and vehicle type.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Driver Arrives</h4>
+                <p>Our verified driver comes to your location. He will inspect the vehicle before starting.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>Enjoy the Ride</h4>
+                <p>Relax in the passenger seat of your own car while we drive you safely to the destination.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vehicle-types">
+        <h2>We Handle All Vehicle Types</h2>
+        <div class="vehicle-list">
+            <span>Automatic</span>
+            <span>Manual Gear</span>
+            <span>Luxury Cars (Benz/BMW)</span>
+            <span>SUVs & Jeeps</span>
+            <span>Vans (KDH)</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Prime City Drivers. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
