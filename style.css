@@ -37,8 +37,8 @@ a { text-decoration: none; color: white; transition: 0.3s; }
 
 /* Hero Section (Updated Size) */
 .hero {
-    height: 45vh;       /* කලින් 60vh තිබුන එක 45vh කළා (උස අඩු කළා) */
-    min-height: 350px;  /* කලින් 450px තිබුන එක 350px කළා */
+    height: 25vh;       /* කලින් 60vh තිබුන එක 45vh කළා (උස අඩු කළා) */
+    min-height: 200px;  /* කලින් 450px තිබුන එක 350px කළා */
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1470&auto=format&fit=crop');
     background-size: cover;
     background-position: center 60%;
@@ -268,3 +268,4 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     .form-row { flex-direction: column; }
 
 }
+
