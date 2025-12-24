@@ -166,11 +166,74 @@ form { max-width: 600px; margin: 40px auto; background: #252525; padding: 30px; 
 }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
+
+/* --- SOCIAL MEDIA SECTION (Pro Style) --- */
+.social-section {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.social-section h2 { font-size: 32px; margin-bottom: 10px; }
+.social-section p { margin-bottom: 40px; color: #aaa; }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    background: #252525;
+    width: 200px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #d4af37;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.social-card i {
+    font-size: 36px;
+    color: #d4af37;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.social-card span {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hover Effects */
+.social-card:hover {
+    transform: translateY(-10px);
+    background: #333;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+.social-card:hover i {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+
 /* Footer */
 footer { padding: 30px 20px; text-align: center; background: #000; color: #777; font-size: 14px; border-top: 1px solid #222; }
 
 
-/* --- MOBILE RESPONSIVE (DESIGN: 2 Top, 1 Bottom) --- */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     
     /* 1. Navbar Updates */
@@ -203,16 +266,16 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     /* 3. Feature Grid (LAYOUT: 2 on Top, 1 on Bottom) */
     .feature-grid {
         display: flex;
-        flex-wrap: wrap;         /* ඉඩ මදි වුනාම පේළිය කඩන්න */
-        justify-content: center; /* ඉතුරු වෙන කොටුව මැදට ගන්න */
-        gap: 15px;               /* කොටු අතර පරතරය */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
         width: 100%;
         padding: 0 10px;
         box-sizing: border-box;
     }
 
     .feature-card {
-        width: 45%;              /* පළලින් භාගයක් පමණ (එවිට 2ක් පේළියට හිටී) */
+        width: 45%;
         min-width: 140px;
         margin: 0;
         padding: 20px 10px;
@@ -224,7 +287,6 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
         height: auto;
     }
 
-    /* අකුරු ප්‍රමාණයන් Phone එකට ගැලපෙන ලෙස */
     .feature-card i { 
         font-size: 24px; 
         margin-bottom: 10px; 
@@ -243,6 +305,19 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
         color: #ccc;
         display: block; 
     }
+
+    /* 4. Social Icons on Mobile (2 per row) */
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-card {
+        width: 42%;
+        padding: 20px 10px;
+    }
+    
+    .social-card i { font-size: 28px; margin-bottom: 10px; }
+    .social-card span { font-size: 12px; }
 
     /* Reviews Section Adjustments */
     .reviews-container {
