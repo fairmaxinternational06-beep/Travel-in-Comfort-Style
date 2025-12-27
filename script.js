@@ -199,5 +199,4 @@ function addReviewToHTML(name, rating, comment) {
         </div>
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
-
-}
+                        }
