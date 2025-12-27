@@ -38,8 +38,8 @@ a { text-decoration: none; color: white; transition: 0.3s; }
 
 /* Hero Section */
 .hero {
-    height: 60vh;       
-    min-height: 450px;  
+    height: 60vh;        
+    min-height: 450px;   
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1470&auto=format&fit=crop');
     background-size: cover;
     background-position: center 60%;
@@ -257,7 +257,7 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     
     .social-card {
         width: 45%; /* පේළියට දෙකක් */
-        padding: 15px 5px; /* ප්‍රමාණය කුඩා කළා (Podi) */
+        padding: 15px 5px; /* ප්‍රමාණය කුඩා කළා */
     }
     
     .social-card i { font-size: 22px; margin-bottom: 5px; }
@@ -266,4 +266,4 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     /* Forms */
     form, .add-review-section { width: 95%; padding: 15px; box-sizing: border-box; }
     .form-row { flex-direction: column; }
-        }
+}
