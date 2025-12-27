@@ -211,79 +211,59 @@ form { max-width: 600px; margin: 40px auto; background: #252525; padding: 30px; 
 footer { padding: 30px 20px; text-align: center; background: #000; color: #777; font-size: 14px; border-top: 1px solid #222; }
 
 
-/* --- MOBILE RESPONSIVE DESIGN (LATEST) --- */
+/* --- MOBILE RESPONSIVE (Clean & Compact) --- */
 @media (max-width: 768px) {
     
-    /* 1. Navbar: Clean Mobile List */
-    .navbar { 
-        padding: 10px 5px; 
-        flex-direction: column;
-        gap: 5px;
-    }
+    /* 1. Navbar */
+    .navbar { padding: 10px 5px; flex-direction: column; gap: 5px; }
     .logo { font-size: 20px; margin-bottom: 5px; }
     .menu-icon { display: none; } 
-
-    .nav-links {
-        display: flex !important;
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-        gap: 12px;
-        padding: 0;
-        margin-top: 5px;
-    }
+    .nav-links { display: flex !important; flex-direction: row; width: 100%; justify-content: center; gap: 12px; padding: 0; margin-top: 5px; }
     .nav-links li { margin: 0; }
     .nav-links a { font-size: 11px; color: #ddd; text-transform: uppercase; }
     .btn-nav { padding: 4px 10px; font-size: 11px; border-radius: 3px; }
 
     /* 2. Hero Section */
     .hero { margin-top: 100px; height: 50vh; min-height: 400px; padding: 0 15px; }
-    .hero h1 { font-size: 32px; line-height: 1.2; }
-    .hero p { font-size: 15px; }
-    .hero-buttons { display: flex; flex-direction: column; gap: 10px; width: 80%; margin: 0 auto; }
-    .btn-gold, .btn-transparent { width: 100%; box-sizing: border-box; text-align: center; }
+    .hero h1 { font-size: 30px; line-height: 1.2; }
+    .hero p { font-size: 14px; }
 
-    /* 3. Feature Grid (SMART GRID: 2 Top, 1 Bottom) */
-    .feature-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        padding: 0 10px;
-    }
+    /* 3. Feature Grid (Compact) */
+    .feature-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 10px; }
+    .feature-card { width: 45%; min-width: 130px; padding: 15px 5px; height: auto; }
+    .feature-card:last-child { width: 60%; margin-top: 5px; } /* 3 වෙනි එක මැදට */
+    .feature-card i { font-size: 24px; margin-bottom: 8px; }
+    .feature-card h3 { font-size: 12px; margin: 5px 0; }
+    .feature-card p { font-size: 10px; line-height: 1.3; }
 
-    .feature-card {
-        width: 44%; /* හරියටම දෙකක් පේළියට හිටින්න (100% / 2 - gap) */
-        min-width: 140px;
-        padding: 20px 10px;
-        height: auto;
-    }
-    /* 3 වන කොටුව (VIP Treatment) තනිවම මැදට ගන්න */
-    .feature-card:last-child {
-        width: 60%; /* යට එක ටිකක් පළලට */
-        margin-top: 5px;
-    }
-
-    .feature-card i { font-size: 28px; margin-bottom: 10px; }
-    .feature-card h3 { font-size: 14px; margin: 5px 0; }
-    .feature-card p { font-size: 11px; }
-
-    /* 4. Social Icons (Grid 2x2) */
-    .social-icons {
-        gap: 15px;
-    }
-    .social-card {
-        width: 44%; /* පේළියට දෙකයි */
-        padding: 20px 10px;
-    }
-    .social-card i { font-size: 28px; }
-    .social-card span { font-size: 12px; }
-
-    /* 5. Forms & Reviews */
-    form, .add-review-section { width: 95%; padding: 20px; box-sizing: border-box; }
-    .form-row { flex-direction: column; }
-    
+    /* 4. REVIEWS SECTION (Desktop Style - 2 Columns) */
     .reviews-container {
-        grid-template-columns: 1fr; /* Reviews එක යට එක */
+        grid-template-columns: repeat(2, 1fr); /* තීරු 2ක් (Side-by-Side) */
+        gap: 10px;
         padding: 0 10px;
     }
+
+    .review-box {
+        padding: 10px; /* ඉඩ අඩු කළා */
+    }
+
+    .user-avatar { width: 30px; height: 30px; font-size: 14px; margin-right: 8px; }
+    .user-info h4 { font-size: 12px; }
+    .star-rating { font-size: 10px; margin-bottom: 5px; }
+    .review-text { font-size: 10px; line-height: 1.3; }
+
+    /* 5. SOCIAL MEDIA (Compact Grid - 2 per row) */
+    .social-icons { gap: 10px; }
+    
+    .social-card {
+        width: 45%; /* පේළියට දෙකක් */
+        padding: 15px 5px; /* ප්‍රමාණය කුඩා කළා (Podi) */
+    }
+    
+    .social-card i { font-size: 22px; margin-bottom: 5px; }
+    .social-card span { font-size: 10px; letter-spacing: 0.5px; }
+
+    /* Forms */
+    form, .add-review-section { width: 95%; padding: 15px; box-sizing: border-box; }
+    .form-row { flex-direction: column; }
+        }
