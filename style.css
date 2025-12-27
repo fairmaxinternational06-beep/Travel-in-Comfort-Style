@@ -6,7 +6,7 @@ body {
     color: #fff;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    font-size: 16px; /* Standard Font Size */
+    font-size: 16px; 
 }
 
 h1, h2, h3, h4 { color: #d4af37; }
@@ -59,27 +59,105 @@ a { text-decoration: none; color: white; transition: 0.3s; }
 .btn-transparent { border: 2px solid #fff; padding: 10px 30px; border-radius: 5px; margin-left: 10px; display: inline-block; }
 .btn-transparent:hover { background: #fff; color: #000; }
 
-/* Sections */
-.features, .booking, .reviews { padding: 80px 20px; background: #1a1a1a; text-align: center; }
-.booking { background: #0f0f0f; }
-
-.feature-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-
-/* Feature Cards (Desktop) */
-.feature-card { 
-    background: #252525; 
-    padding: 30px; 
-    border-radius: 10px; 
-    width: 300px; 
-    border-bottom: 3px solid #d4af37; 
-    transition: transform 0.3s, background 0.3s, box-shadow 0.3s; 
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    color: #fff;
+/* --- PACKAGES SECTION (NEW) --- */
+.packages-section {
+    padding: 80px 20px;
+    background: #111;
+    text-align: center;
 }
-.feature-card i { font-size: 40px; color: #d4af37; margin-bottom: 15px; }
-.feature-card:hover { transform: translateY(-10px); background: #333; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+
+.package-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.package-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 260px;
+    padding: 25px 20px;
+    text-align: left;
+    transition: 0.3s;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+}
+
+.package-card.featured {
+    border: 2px solid #d4af37;
+    background: #252525;
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #d4af37;
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.package-card h3 {
+    color: #d4af37;
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.sub-text {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.price-list li {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-list li strong { color: #fff; }
+
+.btn-package {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-package:hover { background: #d4af37; color: #000; }
+
+/* Sections */
+.booking, .reviews { padding: 80px 20px; background: #1a1a1a; text-align: center; }
+.booking { background: #0f0f0f; }
 
 /* Booking Form */
 form { max-width: 600px; margin: 40px auto; background: #252525; padding: 30px; border-radius: 10px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
@@ -154,7 +232,7 @@ form { max-width: 600px; margin: 40px auto; background: #252525; padding: 30px; 
 .rating-input i { font-size: 28px; color: #444; cursor: pointer; transition: 0.3s; }
 .rating-input i.active, .rating-input i:hover { color: #d4af37; }
 
-/* Loader for Reviews */
+/* Loader */
 .loader {
     border: 4px solid #333;
     border-top: 4px solid #d4af37;
@@ -211,7 +289,7 @@ form { max-width: 600px; margin: 40px auto; background: #252525; padding: 30px; 
 footer { padding: 30px 20px; text-align: center; background: #000; color: #777; font-size: 14px; border-top: 1px solid #222; }
 
 
-/* --- MOBILE RESPONSIVE (Clean & Compact) --- */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     
     /* 1. Navbar */
@@ -228,25 +306,24 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     .hero h1 { font-size: 30px; line-height: 1.2; }
     .hero p { font-size: 14px; }
 
-    /* 3. Feature Grid (Compact) */
-    .feature-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 10px; }
-    .feature-card { width: 45%; min-width: 130px; padding: 15px 5px; height: auto; }
-    .feature-card:last-child { width: 60%; margin-top: 5px; } /* 3 වෙනි එක මැදට */
-    .feature-card i { font-size: 24px; margin-bottom: 8px; }
-    .feature-card h3 { font-size: 12px; margin: 5px 0; }
-    .feature-card p { font-size: 10px; line-height: 1.3; }
+    /* 3. Package Grid (Mobile: 2 per row) */
+    .package-grid { gap: 10px; }
+    .package-card {
+        width: 45%; 
+        min-width: 150px;
+        padding: 15px 10px;
+    }
+    .package-card h3 { font-size: 14px; }
+    .price-list li { font-size: 10px; flex-direction: column; margin-bottom: 6px; }
+    .btn-package { padding: 5px; font-size: 12px; }
 
     /* 4. REVIEWS SECTION (Desktop Style - 2 Columns) */
     .reviews-container {
-        grid-template-columns: repeat(2, 1fr); /* තීරු 2ක් (Side-by-Side) */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         padding: 0 10px;
     }
-
-    .review-box {
-        padding: 10px; /* ඉඩ අඩු කළා */
-    }
-
+    .review-box { padding: 10px; }
     .user-avatar { width: 30px; height: 30px; font-size: 14px; margin-right: 8px; }
     .user-info h4 { font-size: 12px; }
     .star-rating { font-size: 10px; margin-bottom: 5px; }
@@ -254,12 +331,7 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
 
     /* 5. SOCIAL MEDIA (Compact Grid - 2 per row) */
     .social-icons { gap: 10px; }
-    
-    .social-card {
-        width: 45%; /* පේළියට දෙකක් */
-        padding: 15px 5px; /* ප්‍රමාණය කුඩා කළා */
-    }
-    
+    .social-card { width: 45%; padding: 15px 5px; }
     .social-card i { font-size: 22px; margin-bottom: 5px; }
     .social-card span { font-size: 10px; letter-spacing: 0.5px; }
 
