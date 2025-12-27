@@ -2,7 +2,7 @@
 // 1. CONFIGURATION (SETTINGS)
 // ==========================================
 // ඔබේ WhatsApp අංකය (94 සමග)
-const myPhoneNumber = "94760419130"; 
+const myPhoneNumber = "94743615411"; 
 
 // ඔබේ Google Sheet Web App URL එක මෙතනට දමන්න
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwN9NF5ugfB7uGVBts5zSEfYSdi2rQJGOqt3gHorAD092guqX5h4yh6ncK8s6De0JHs/exec'; 
@@ -199,4 +199,5 @@ function addReviewToHTML(name, rating, comment) {
         </div>
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
+
 }
