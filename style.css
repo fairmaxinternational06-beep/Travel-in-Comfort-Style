@@ -6,6 +6,7 @@ body {
     color: #fff;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-size: 18px; /* අකුරු ප්‍රමාණය 18px කළා (කලින් තිබුනේ 16px) */
 }
 
 h1, h2, h3, h4 { color: #d4af37; }
@@ -329,3 +330,4 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     form, .add-review-section { width: 95%; padding: 15px; box-sizing: border-box; }
     .form-row { flex-direction: column; }
 }
+
