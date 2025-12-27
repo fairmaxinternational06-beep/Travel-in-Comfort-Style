@@ -1,10 +1,7 @@
 // ==========================================
 // 1. CONFIGURATION (SETTINGS)
 // ==========================================
-// ඔබේ WhatsApp අංකය (94 සමග)
 const myPhoneNumber = "94743615411"; 
-
-// ඔබේ Google Sheet Web App URL එක
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwN9NF5ugfB7uGVBts5zSEfYSdi2rQJGOqt3gHorAD092guqX5h4yh6ncK8s6De0JHs/exec'; 
 
 
@@ -28,6 +25,11 @@ const navSlide = () => {
                 }
             });
         });
+    }
+}
+navSlide(); // <--- මෙන්න මේ වරහන් ටික තමයි අඩුවෙලා තිබුනේ!
+
+
 // ==========================================
 // 3. BOOKING FORM LOGIC (WhatsApp) - NO VEHICLE
 // ==========================================
@@ -57,10 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
                           "*Time:* " + time + "%0A%0A" +
                           "Please confirm availability.";
 
-            // නිවැරදි කළ URL එක (මෙතන තමයි වැරැද්ද තිබුනේ)
             var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + message;
             
-            // WhatsApp වෙත යොමු කිරීම
+            // Redirect
             window.location.href = whatsappURL; 
         });
     }
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const reviewList = document.getElementById('reviewList');
 const loader = document.getElementById('loader');
 
-// A. Load Reviews from Database
+// A. Load Reviews
 function loadReviews() {
     if(!reviewList) return; 
 
@@ -84,7 +85,6 @@ function loadReviews() {
         return;
     }
 
-    // Cache busting
     const cacheBuster = scriptURL + '?v=' + new Date().getTime();
 
     fetch(cacheBuster)
@@ -106,12 +106,10 @@ function loadReviews() {
             loader.style.display = 'none';
         });
 }
-
-// Page Load
 window.addEventListener('load', loadReviews);
 
 
-// B. Star Rating Click Logic
+// B. Star Rating Logic
 const stars = document.querySelectorAll('#starContainer i');
 const ratingInput = document.getElementById('ratingValue');
 
@@ -145,20 +143,17 @@ if(reviewForm) {
         submitReviewBtn.disabled = true;
         submitReviewBtn.innerText = "Posting...";
         
-        // Send data to Google Sheet
         fetch(scriptURL, { method: 'POST', body: new FormData(reviewForm)})
             .then(response => {
                 statusMsg.innerText = "Review submitted successfully!";
                 statusMsg.style.color = "#28a745"; 
                 
-                // Show on screen immediately
                 addReviewToHTML(
                     document.getElementById('reviewerName').value,
                     ratingInput.value,
                     document.getElementById('reviewComment').value
                 );
                 
-                // Reset Form
                 reviewForm.reset();
                 stars.forEach(s => s.classList.remove('active'));
                 ratingInput.value = "0";
@@ -176,7 +171,6 @@ if(reviewForm) {
     });
 }
 
-// Helper: Create HTML for a review
 function addReviewToHTML(name, rating, comment) {
     let starsHtml = "";
     for(let i=0; i<rating; i++) starsHtml += '<i class="fas fa-star"></i>';
@@ -194,6 +188,4 @@ function addReviewToHTML(name, rating, comment) {
         </div>
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
-            }
-
-
+}
