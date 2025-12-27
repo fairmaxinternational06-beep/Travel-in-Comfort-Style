@@ -13,7 +13,7 @@
         <div class="logo">PRIME CITY<span>DRIVERS</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#reviews-section">Reviews</a></li>
             <li><a href="#social-section">Social</a></li> 
             <li><a href="#booking" class="btn-nav">Book Now</a></li>
@@ -34,27 +34,58 @@
         </div>
     </header>
 
-    <section id="services" class="features">
+    <section id="services" class="packages-section">
         <div class="container">
-            <h2>Why Choose Prime City?</h2>
-            <div class="feature-grid">
-                <a href="status.html" class="feature-card">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>Verified Drivers</h3>
-                    <p>Experienced and background-checked professionals for your safety.</p>
-                </a>
+            <h2>Our Premium Packages</h2>
+            <p>Choose the best plan that suits your journey. Best rates in Colombo.</p>
+            
+            <div class="package-grid">
+                
+                <div class="package-card">
+                    <h3>On-Demand Trip</h3>
+                    <p class="sub-text">Quick A to B drops</p>
+                    <ul class="price-list">
+                        <li>First 10km: <strong>LKR 1,750</strong></li>
+                        <li>Additional km: <strong>LKR 100</strong></li>
+                        <li>Waiting (20 min): <strong>LKR 300</strong></li>
+                    </ul>
+                    <a href="#booking" class="btn-package">Book Now</a>
+                </div>
 
-                <a href="services.html" class="feature-card">
-                    <i class="fas fa-car"></i>
-                    <h3>Our Services</h3>
-                    <p>We provide professional drivers to drive YOUR vehicle. Safe, reliable, and convenient.</p>
-                </a>
+                <div class="package-card">
+                    <h3>Hourly Packages</h3>
+                    <p class="sub-text">For short rounds & shopping</p>
+                    <ul class="price-list">
+                        <li>2 Hours: <strong>LKR 3,000</strong></li>
+                        <li>3 Hours: <strong>LKR 3,700</strong></li>
+                        <li>4 Hours: <strong>LKR 4,500</strong></li>
+                    </ul>
+                    <a href="#booking" class="btn-package">Book Now</a>
+                </div>
 
-                <a href="vip.html" class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3>VIP Treatment</h3>
-                    <p>Clean vehicles and polite service that exceeds expectations.</p>
-                </a>
+                <div class="package-card featured">
+                    <div class="badge">POPULAR</div>
+                    <h3>Full Day Drivers</h3>
+                    <p class="sub-text">Your trusted driver all day</p>
+                    <ul class="price-list">
+                        <li>6 Hours: <strong>LKR 3,500</strong></li>
+                        <li>8 Hours: <strong>LKR 4,000</strong></li>
+                        <li>12 Hours: <strong>LKR 4,500</strong></li>
+                    </ul>
+                    <a href="#booking" class="btn-package">Book Now</a>
+                </div>
+
+                <div class="package-card">
+                    <h3>Outstation & Drops</h3>
+                    <p class="sub-text">Long distance travel</p>
+                    <ul class="price-list">
+                        <li>Vehicle Drop: From <strong>LKR 6,000</strong></li>
+                        <li>Outstation (Per Day): <strong>LKR 5,000</strong></li>
+                        <li>(Meals & Accommodation required)</li>
+                    </ul>
+                    <a href="#booking" class="btn-package">Book Now</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -97,7 +128,6 @@
                 
                 <button type="submit" class="btn-gold full-width">Send Booking Request <i class="fab fa-whatsapp"></i></button>
             </form>
-                
         </div>
     </section>
 
@@ -108,29 +138,31 @@
             
             <div class="loader" id="loader"></div>
             <div class="reviews-container" id="reviewList">
-                </div>
+            </div>
 
-                <div class="add-review-section">
-                    <h3>Rate Your Experience</h3>
-                    <form id="reviewForm">
-                        <div class="rating-input" id="starContainer">
-                            <i class="fas fa-star" data-value="1"></i>
-                            <i class="fas fa-star" data-value="2"></i>
-                            <i class="fas fa-star" data-value="3"></i>
-                            <i class="fas fa-star" data-value="4"></i>
-                            <i class="fas fa-star" data-value="5"></i>
-                        </div>
-                        <input type="hidden" name="Rating" id="ratingValue" value="0">
-                        
-                        <input type="text" name="Name" id="reviewerName" class="form-input" placeholder="Your Name" style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px;" required>
-                        
-                        <textarea name="Comment" id="reviewComment" class="form-input" placeholder="Write your feedback..." style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px; height:80px;" required></textarea>
-                        
-                        <button type="submit" class="btn-gold" id="submitReviewBtn" style="width:100%;">Post Review</button>
-                        <p id="statusMsg" style="margin-top:10px; font-size:14px; color:#aaa;"></p>
-                    </form>
-                </div>
+            <div class="add-review-section">
+                <h3>Rate Your Experience</h3>
+                <form id="reviewForm">
+                    <div class="rating-input" id="starContainer">
+                        <i class="fas fa-star" data-value="1"></i>
+                        <i class="fas fa-star" data-value="2"></i>
+                        <i class="fas fa-star" data-value="3"></i>
+                        <i class="fas fa-star" data-value="4"></i>
+                        <i class="fas fa-star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="Rating" id="ratingValue" value="0">
+                    
+                    <input type="text" name="Name" id="reviewerName" class="form-input" placeholder="Your Name" style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px;" required>
+                    
+                    <textarea name="Comment" id="reviewComment" class="form-input" placeholder="Write your feedback..." style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px; height:80px;" required></textarea>
+                    
+                    <button type="submit" class="btn-gold" id="submitReviewBtn" style="width:100%;">Post Review</button>
+                    <p id="statusMsg" style="margin-top:10px; font-size:14px; color:#aaa;"></p>
+                </form>
+            </div>
+        </div>
     </section>
+
     <section id="social-section" class="social-section">
         <div class="container">
             <h2>Connect With Us</h2>
@@ -156,19 +188,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
