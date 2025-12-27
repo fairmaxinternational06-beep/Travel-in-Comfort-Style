@@ -4,7 +4,7 @@
 // ඔබේ WhatsApp අංකය (94 සමග)
 const myPhoneNumber = "94743615411"; 
 
-// ඔබේ Google Sheet Web App URL එක මෙතනට දමන්න
+// ඔබේ Google Sheet Web App URL එක
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwN9NF5ugfB7uGVBts5zSEfYSdi2rQJGOqt3gHorAD092guqX5h4yh6ncK8s6De0JHs/exec'; 
 
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Form Data (Vehicle ඉවත් කළා)
+            // Form Data (Vehicle ඉවත් කර ඇත)
             var name = document.getElementById('name').value;
             var phone = document.getElementById('phone').value;
             var pickup = document.getElementById('pickup').value;
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var date = document.getElementById('date').value;
             var time = document.getElementById('time').value;
 
-            // WhatsApp Message (Vehicle පේළිය අයින් කළා)
+            // WhatsApp Message (Vehicle පේළිය ඉවත් කර ඇත)
             var message = "Hello! I would like to book a ride.%0A%0A" +
                           "*Name:* " + name + "%0A" +
                           "*Phone:* " + phone + "%0A" + 
@@ -83,13 +83,12 @@ function loadReviews() {
 
     loader.style.display = 'block';
     
-    // Check if scriptURL is set
     if(scriptURL === 'YOUR_GOOGLE_SCRIPT_URL_HERE' || scriptURL === '') {
         loader.style.display = 'none';
         return;
     }
 
-    // Cache busting to get fresh data
+    // Cache busting
     const cacheBuster = scriptURL + '?v=' + new Date().getTime();
 
     fetch(cacheBuster)
@@ -98,7 +97,6 @@ function loadReviews() {
             loader.style.display = 'none';
             reviewList.innerHTML = ''; 
             
-            // Add reviews (Newest first)
             data.reverse().forEach(review => {
                 addReviewToHTML(review.name, review.rating, review.comment);
             });
@@ -134,7 +132,7 @@ stars.forEach(star => {
 });
 
 
-// C. Submit Review Logic (Updated: No WhatsApp)
+// C. Submit Review Logic
 const reviewForm = document.getElementById('reviewForm');
 const submitReviewBtn = document.getElementById('submitReviewBtn');
 const statusMsg = document.getElementById('statusMsg');
@@ -151,21 +149,19 @@ if(reviewForm) {
         submitReviewBtn.disabled = true;
         submitReviewBtn.innerText = "Posting...";
         
-        // 1. Send data to Google Sheet
+        // Send data to Google Sheet
         fetch(scriptURL, { method: 'POST', body: new FormData(reviewForm)})
             .then(response => {
                 statusMsg.innerText = "Review submitted successfully!";
                 statusMsg.style.color = "#28a745"; 
                 
-                // 2. Show on screen immediately
+                // Show on screen immediately
                 addReviewToHTML(
                     document.getElementById('reviewerName').value,
                     ratingInput.value,
                     document.getElementById('reviewComment').value
                 );
                 
-                // WhatsApp කොටස මෙතනින් ඉවත් කළා
-
                 // Reset Form
                 reviewForm.reset();
                 stars.forEach(s => s.classList.remove('active'));
@@ -202,5 +198,4 @@ function addReviewToHTML(name, rating, comment) {
         </div>
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
-                        }
-
+            }
