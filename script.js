@@ -34,38 +34,41 @@ navSlide();
 
 
 // ==========================================
-// 3. BOOKING FORM LOGIC (WhatsApp) - Updated
+// 3. BOOKING FORM LOGIC (WhatsApp) - NO VEHICLE
 // ==========================================
-const bookingForm = document.getElementById('bookingForm');
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const bookingForm = document.getElementById('bookingForm');
 
-if (bookingForm) {
-    bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        // Form Data
-        var name = document.getElementById('name').value;
-        var phone = document.getElementById('phone').value; // Phone Number එක ගත්තා
-        var pickup = document.getElementById('pickup').value;
-        var drop = document.getElementById('drop').value;
-        var date = document.getElementById('date').value;
-        var time = document.getElementById('time').value;
-        var vehicle = document.getElementById('vehicle').value;
+            // Form Data (Vehicle ඉවත් කළා)
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var pickup = document.getElementById('pickup').value;
+            var drop = document.getElementById('drop').value;
+            var date = document.getElementById('date').value;
+            var time = document.getElementById('time').value;
 
-        // WhatsApp Message එකට Phone Number එක එකතු කළා
-        var message = "Hello! I would like to book a ride.%0A%0A" +
-                      "*Name:* " + name + "%0A" +
-                      "*Phone:* " + phone + "%0A" + 
-                      "*Pickup:* " + pickup + "%0A" +
-                      "*Drop-off:* " + drop + "%0A" +
-                      "*Date:* " + date + "%0A" +
-                      "*Time:* " + time + "%0A" +
-                      "*Vehicle:* " + vehicle + "%0A%0A" +
-                      "Please confirm availability.";
+            // WhatsApp Message (Vehicle පේළිය අයින් කළා)
+            var message = "Hello! I would like to book a ride.%0A%0A" +
+                          "*Name:* " + name + "%0A" +
+                          "*Phone:* " + phone + "%0A" + 
+                          "*Pickup:* " + pickup + "%0A" +
+                          "*Drop-off:* " + drop + "%0A" +
+                          "*Date:* " + date + "%0A" +
+                          "*Time:* " + time + "%0A%0A" +
+                          "Please confirm availability.";
 
-        var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + message;
-        window.open(whatsappURL, '_blank');
-    });
-}
+            var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + message;
+            
+            // WhatsApp වෙත යොමු කිරීම
+            window.location.href = whatsappURL; 
+        });
+    }
+});
 
 
 // ==========================================
@@ -200,3 +203,4 @@ function addReviewToHTML(name, rating, comment) {
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
                         }
+
