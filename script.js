@@ -27,11 +27,11 @@ const navSlide = () => {
         });
     }
 }
-navSlide(); // <--- මෙන්න මේ වරහන් ටික තමයි අඩුවෙලා තිබුනේ!
+navSlide();
 
 
 // ==========================================
-// 3. BOOKING FORM LOGIC (WhatsApp) - NO VEHICLE
+// 3. BOOKING FORM LOGIC (WhatsApp) - FINAL FIX
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + message;
             
-            // Redirect
+            // Redirect to WhatsApp
             window.location.href = whatsappURL; 
         });
     }
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ==========================================
-// 4. REVIEWS LOGIC (Google Sheets ONLY)
+// 4. REVIEWS LOGIC
 // ==========================================
 const reviewList = document.getElementById('reviewList');
 const loader = document.getElementById('loader');
