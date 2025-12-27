@@ -28,11 +28,6 @@ const navSlide = () => {
                 }
             });
         });
-    }
-}
-navSlide();
-
-
 // ==========================================
 // 3. BOOKING FORM LOGIC (WhatsApp) - NO VEHICLE
 // ==========================================
@@ -44,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Form Data (Vehicle ඉවත් කර ඇත)
+            // Form Data
             var name = document.getElementById('name').value;
             var phone = document.getElementById('phone').value;
             var pickup = document.getElementById('pickup').value;
@@ -52,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var date = document.getElementById('date').value;
             var time = document.getElementById('time').value;
 
-            // WhatsApp Message (Vehicle පේළිය ඉවත් කර ඇත)
+            // WhatsApp Message
             var message = "Hello! I would like to book a ride.%0A%0A" +
                           "*Name:* " + name + "%0A" +
                           "*Phone:* " + phone + "%0A" + 
@@ -62,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
                           "*Time:* " + time + "%0A%0A" +
                           "Please confirm availability.";
 
-            var whatsappURL = "https://wa.me/94743615411" + myPhoneNumber + "?text=" + message;
+            // නිවැරදි කළ URL එක (මෙතන තමයි වැරැද්ද තිබුනේ)
+            var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + message;
             
             // WhatsApp වෙත යොමු කිරීම
             window.location.href = whatsappURL; 
@@ -199,4 +195,5 @@ function addReviewToHTML(name, rating, comment) {
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
             }
+
 
