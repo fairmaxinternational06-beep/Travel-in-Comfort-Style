@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           "*Time:* " + time + "%0A%0A" +
                           "Please confirm availability.";
 
-            var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + message;
+            var whatsappURL = "https://wa.me/94743615411" + myPhoneNumber + "?text=" + message;
             
             // WhatsApp වෙත යොමු කිරීම
             window.location.href = whatsappURL; 
@@ -199,3 +199,4 @@ function addReviewToHTML(name, rating, comment) {
     `;
     reviewList.insertAdjacentHTML('afterbegin', newReview);
             }
+
