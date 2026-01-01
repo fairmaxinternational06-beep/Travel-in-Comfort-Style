@@ -548,4 +548,148 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     padding: 20px;
 }
 
+/* --- LOGIN MODAL STYLES (අලුත් Login Box එක සඳහා) --- */
+.modal {
+    display: none; /* මුලින් මේක පේන්න නෑ */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* කළු පාට පසුබිම */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    width: 380px;
+    height: 480px;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    animation: fadeIn 0.4s;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.form-box {
+    width: 380px;
+    height: 400px;
+    position: relative;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-weight: bold;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #f4c430, #d4a010);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto;
+    background: linear-gradient(to right, #f4c430, #d4a010);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ෆෝම් දෙක එහා මෙහා කිරීම සඳහා */
+#login {
+    left: 50px;
+}
+#register {
+    left: 450px;
+}
+
+/* --- MISSION SECTION STYLES (අර කලින් දුන්න කොටස) --- */
+.mission-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+.mission-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.mission-text { flex: 1; }
+.mission-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-left: 5px solid #f4c430;
+    padding-left: 15px;
+    color: #333;
+}
+.mission-text p { margin-bottom: 15px; color: #555; line-height: 1.6; }
+.mission-image { flex: 1; }
+.mission-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+    .mission-content { flex-direction: column; text-align: center; }
+    .mission-text h2 { border-left: none; border-bottom: 4px solid #f4c430; display: inline-block; }
+}
 
