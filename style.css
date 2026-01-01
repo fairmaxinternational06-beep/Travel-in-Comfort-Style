@@ -477,3 +477,47 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
 /* Positioning Forms */
 #login { left: 50px; }
 #register { left: 450px; }
+
+/* --- ADVANCED ANIMATIONS (සිනමාත්මක පෙනුම) --- */
+
+/* 1. ප්‍රධාන මාතෘකාව උඩ සිට පහළට පැමිණීම */
+.hero-content h1 {
+    animation: slideDown 1s ease-out;
+}
+
+/* 2. විස්තරය හිමින් මතු වීම */
+.hero-content p {
+    animation: fadeIn 2s ease-out;
+}
+
+/* 3. බොත්තම් පහළ සිට මතු වීම (තත්පර 0.5ක් පරක්කු වී) */
+.hero-buttons {
+    animation: slideUp 1s ease-out 0.5s backwards;
+}
+
+/* 4. Package කාඩ් උඩට මවුස් එක ගෙනගිය විට උඩට පැමිණීම */
+.package-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-10px); /* කාඩ් එක පොඩ්ඩක් උඩට එයි */
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.3); /* නිල් පාට එළියක් වැටෙයි */
+}
+
+/* --- ANIMATION KEYFRAMES (ඇනිමේෂන් වැඩ කරන විදිහ) --- */
+
+@keyframes slideDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
