@@ -1,77 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Prime City Drivers | Luxury Transport Service</title>
-
     <link rel="icon" href="favicon.png" type="image/png">
-
     <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
-
 <body>
 
-
-
     <nav class="navbar">
-
         <div class="logo">PRIME CITY<span>DRIVERS</span></div>
-
         <ul class="nav-links">
-
             <li><a href="#home">Home</a></li>
-
             <li><a href="#services">Services</a></li>
-
             <li><a href="#reviews-section">Reviews</a></li>
-
             <li><a href="#social-section">Social</a></li> 
-
             <li><a href="#booking" class="btn-nav">Book Now</a></li>
-
-
+            <button class="login-btn" onclick="openLoginModal()">Login / Sign Up</button>
         </ul>
-
         <div class="menu-icon" id="menuIcon">
-
             <i class="fas fa-bars"></i>
-
         </div>
-
     </nav>
 
-
-
     <header id="home" class="hero">
-
         <div class="hero-content">
-
             <h1>PRIME CITY DRIVERS</h1>
-
             <p>Your Trusted Travel Partner in Colombo. Safe, Reliable, and Premium Service.</p>
-
             <div class="hero-buttons">
-
                 <a href="#booking" class="btn-gold">Book a Ride</a>
-
                 <a href="https://wa.me/94760419130" class="btn-transparent"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-
             </div>
-
         </div>
-
     </header>
-
-
 
     <section id="services" class="packages-section">
         <div class="container">
@@ -141,258 +104,199 @@
         </div>
     </section>
 
-
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>At Prime City Drivers, we believe that your journey should be more than just travel. Our mission is to provide safe, reliable, and professional transportation services, giving you peace of mind when you need it most.</p>
+                    <p>Founded in 2025 by a team of safety advocates, we are committed to building safer communities and promoting responsible travel across Sri Lanka.</p>
+                    <p>Every ride we provide is a step toward a safer, more comfortable Sri Lanka.</p>
+                    <a href="#booking" class="btn-gold">Join With Us</a>
+                </div>
+                <div class="mission-image">
+                    <img src="img3.jpg" alt="Our Mission Driver">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="booking" class="booking">
-
         <div class="container">
-
             <h2>Book Your Ride</h2>
-
             <p>Fill the form below to get an instant quote via WhatsApp.</p>
-
             
-
             <form id="bookingForm">
-
                 <div class="form-group">
-
                     <label>Your Name</label>
-
                     <input type="text" id="name" placeholder="Enter your name" required>
-
                 </div>
-
                 
-
                 <div class="form-group">
-
                     <label>Phone Number</label>
-
                     <input type="tel" id="phone" placeholder="Your Phone Number" required>
-
                 </div>
 
-
-
                 <div class="form-group">
-
                     <label>Your Location</label>
-
                     <input type="text" id="pickup" placeholder="Colombo 03, Airport, etc." required>
-
                 </div>
-
                 <div class="form-group">
-
                     <label>Drop Location</label>
-
                     <input type="text" id="drop" placeholder="Destination" required>
-
                 </div>
-
                 
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label>Date</label>
-
                         <input type="date" id="date" required>
-
                     </div>
-
                     <div class="form-group">
-
                         <label>Time</label>
-
                         <input type="time" id="time" required>
-
                     </div>
-
                 </div>
-
                 
-
                 <button type="submit" class="btn-gold full-width">Send Booking Request <i class="fab fa-whatsapp"></i></button>
-
             </form>
-
         </div>
-
     </section>
-
-
 
     <section id="reviews-section" class="reviews">
-
         <div class="container">
-
             <h2>Client Reviews</h2>
-
             <p>See what others are saying about Prime City Drivers.</p>
-
             
-
             <div class="loader" id="loader"></div>
-
             <div class="reviews-container" id="reviewList">
-
             </div>
-
-
 
             <div class="add-review-section">
-
                 <h3>Rate Your Experience</h3>
-
                 <form id="reviewForm">
-
                     <div class="rating-input" id="starContainer">
-
                         <i class="fas fa-star" data-value="1"></i>
-
                         <i class="fas fa-star" data-value="2"></i>
-
                         <i class="fas fa-star" data-value="3"></i>
-
                         <i class="fas fa-star" data-value="4"></i>
-
                         <i class="fas fa-star" data-value="5"></i>
-
                     </div>
-
                     <input type="hidden" name="Rating" id="ratingValue" value="0">
-
                     
-
                     <input type="text" name="Name" id="reviewerName" class="form-input" placeholder="Your Name" style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px;" required>
-
                     
-
                     <textarea name="Comment" id="reviewComment" class="form-input" placeholder="Write your feedback..." style="width:100%; padding:10px; margin-bottom:10px; background:#333; color:#fff; border:1px solid #555; border-radius:5px; height:80px;" required></textarea>
-
                     
-
                     <button type="submit" class="btn-gold" id="submitReviewBtn" style="width:100%;">Post Review</button>
-
                     <p id="statusMsg" style="margin-top:10px; font-size:14px; color:#aaa;"></p>
-
                 </form>
-
             </div>
-
         </div>
-
     </section>
-
-
 
     <section id="social-section" class="social-section">
-
         <div class="container">
-
             <h2>Connect With Us</h2>
-
             <p>Follow Prime City Drivers on social media for updates and offers.</p>
-
             
-
             <div class="social-icons">
-
                 <a href="https://www.facebook.com/profile.php?id=61585702766798" target="_blank" class="social-card">
-
                     <i class="fab fa-facebook-f"></i>
-
                     <span>Facebook</span>
-
                 </a>
-
-
 
                 <a href="https://wa.me/94743615411" target="_blank" class="social-card">
-
                     <i class="fab fa-whatsapp"></i>
-
                     <span>WhatsApp</span>
-
                 </a>
-
             </div>
-
         </div>
-
     </section>
 
-
-
     <footer>
-
         <p>&copy; 2025 Prime City Drivers. All Rights Reserved.</p>
-
     </footer>
 
-
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+                </div>
+                <form id="login" class="input-group">
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="register" class="input-group">
+                    <input type="text" class="input-field" placeholder="Your Name" required>
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
     <script>
+    // --- Login Modal Logic ---
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+    var modal = document.getElementById("loginModal");
 
-    document.addEventListener('contextmenu', function(e) {
-
-        e.preventDefault();
-
-    });
-
-    
-
-    document.onkeydown = function(e) {
-
-        if(event.keyCode == 123) {
-
-            return false;
-
-        }
-
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-
-            return false;
-
-        }
-
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-
-            return false;
-
-        }
-
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-
-            return false;
-
-        }
-
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-
-            return false;
-
-        }
-
+    function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
     }
 
-</script>
+    function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+    }
 
+    function openLoginModal() {
+        modal.style.display = "block";
+    }
+
+    function closeLoginModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // --- Security Scripts ---
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    document.onkeydown = function(e) {
+        if(event.keyCode == 123) {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    }
+    </script>
 </body>
-
-                                                                             </html>
-
-
-
-
-
-
-
-
-
-
+</html>
