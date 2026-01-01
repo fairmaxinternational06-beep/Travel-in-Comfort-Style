@@ -693,3 +693,24 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     .mission-text h2 { border-left: none; border-bottom: 4px solid #f4c430; display: inline-block; }
 }
 
+/* --- SPACING UPDATES (හිඩැස් හැදීම) --- */
+
+/* 1. Hero කොටසේ බොත්තම් දෙක අතර ඉඩ */
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* මැදට ගන්න */
+    align-items: center;
+    gap: 20px !important; /* බොත්තම් දෙක අතර 20px ක පරතරයක් */
+    flex-wrap: wrap; /* ෆෝන් වලදි ඉඩ මදි නම් ලස්සනට යටට වැටෙන්න */
+    margin-top: 20px;
+}
+
+/* ෆෝන් සඳහා විශේෂයි: බොත්තම් යටට වැටුනොත් ඒවා අතර ඉඩ තවත් වැඩි කරන්න */
+.hero-buttons a {
+    margin: 5px 0;
+}
+
+/* 2. Mission කොටසේ ලිපිය සහ පින්තූරය අතර ඉඩ */
+.mission-text {
+    margin-bottom: 50px !important; /* "Join with us" බට්න් එක සහ පහළ පින්තූරය හොඳට ඈත් කරන්න */
+}
