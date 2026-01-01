@@ -522,25 +522,28 @@ footer { padding: 30px 20px; text-align: center; background: #000; color: #777; 
     100% { opacity: 1; }
 }
 
-/* --- PACKAGE CARD IMAGES --- */
+/* --- FIXED PACKAGE CARD IMAGES --- */
 
-/* කාඩ් එකේ ඇතුලේ ඉඩ (Padding) අයින් කිරීම */
+/* කාඩ් එකේ පාට සහ හැඩය */
 .package-card {
-    padding: 0 !important; /* පරණ padding එක අයින් කරන්න */
-    overflow: hidden; /* පින්තූරේ කොන් රවුම් වෙන්න */
+    padding: 0 !important; /* කාඩ් එකේ ඇතුලේ ඉඩ අයින් කිරීම */
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
+    border-radius: 15px; /* කාඩ් එකේ මුලු රවුම් කිරීම */
 }
 
-/* පින්තූරයේ විලාසිතාව */
-.card-img {
+/* පින්තූරයේ ප්‍රමාණය පාලනය කිරීම */
+.package-card img {
     width: 100%;
-    height: 180px; /* පින්තූරයේ උස */
-    object-fit: cover; /* පින්තූරේ ඇද නොවී ලස්සනට පේන්න */
-    border-bottom: 3px solid #f4c430; /* රන් පාට ඉරක් */
+    height: 200px !important; /* උස 200px වලට සීමා කිරීම */
+    object-fit: cover; /* පින්තූරය ඇද නොවී ලස්සනට පෙන්වන්න */
+    display: block;
+    border-bottom: 4px solid #f4c430; /* රන් පාට ඉරක් */
 }
 
 /* කාඩ් එකේ විස්තර සඳහා අලුත් ඉඩක් */
 .card-body {
     padding: 20px;
 }
+
